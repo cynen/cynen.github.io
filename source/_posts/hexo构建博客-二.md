@@ -60,7 +60,7 @@ git clone xxx@ ..   themes/tomotoes
 ## 修改主题配置
 
 在替换主题后,使用 `hexo s`启动后,预览,发现界面排版不正常.
-![]((/images/2019/11/25.png))
+![](/images/2019/11/25.png)
 
 需要进入到对应的GitHub阅读文档.[也就是对应的主题提供的GitHub项目]
 
