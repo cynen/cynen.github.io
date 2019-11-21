@@ -6,13 +6,13 @@
     
     
     
-    <title>Cynen</title>
+    <title>hexo构建博客(二) | Cynen</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     
     <meta name="theme-color" content="#77AAFF">
     
     
-    <meta name="keywords" content="">
+    <meta name="keywords" content="hexo">
     
     
 
@@ -39,12 +39,24 @@
 
 
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Cynen">
-<meta property="og:url" content="http:&#x2F;&#x2F;cynen.github.io&#x2F;index.html">
+    <meta name="description" content="本节主要是介绍hexo更换主题以及在搭建hexo期间容易产生的问题. Hexo 更换主题经过上面的各种环境搭建，我们的博客可算是基本成形了，接下来就是对博客进行装修，选择一个我们喜欢的主题 我们可以在hexo官方上选择我们喜欢的主题（PS：选择博客主题链接） 选择自己喜欢的主题后点击主题名进入发布人的github 这里以我的博客选择的主题为例">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo构建博客(二)">
+<meta property="og:url" content="http:&#x2F;&#x2F;cynen.github.io&#x2F;2019&#x2F;11&#x2F;21&#x2F;hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C&#x2F;index.html">
 <meta property="og:site_name" content="Cynen">
+<meta property="og:description" content="本节主要是介绍hexo更换主题以及在搭建hexo期间容易产生的问题. Hexo 更换主题经过上面的各种环境搭建，我们的博客可算是基本成形了，接下来就是对博客进行装修，选择一个我们喜欢的主题 我们可以在hexo官方上选择我们喜欢的主题（PS：选择博客主题链接） 选择自己喜欢的主题后点击主题名进入发布人的github 这里以我的博客选择的主题为例">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http:&#x2F;&#x2F;cynen.github.io&#x2F;images&#x2F;2019&#x2F;11&#x2F;21.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;foxgrin.github.io&#x2F;img&#x2F;Hexo&#x2F;23.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;foxgrin.github.io&#x2F;img&#x2F;Hexo&#x2F;24.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;cynen.github.io&#x2F;images&#x2F;2019&#x2F;11&#x2F;25.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;foxgrin.github.io&#x2F;img&#x2F;Hexo&#x2F;26.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;foxgrin.github.io&#x2F;img&#x2F;Hexo&#x2F;27.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;cynen.github.io&#x2F;images&#x2F;2019&#x2F;11&#x2F;1.png">
+<meta property="og:updated_time" content="2019-11-21T16:26:39.148Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;cynen.github.io&#x2F;images&#x2F;2019&#x2F;11&#x2F;21.png">
     
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link id="style" rel="stylesheet" href="/css/style.css?v=3.0">
@@ -57,7 +69,7 @@
 
 <body>
     <div id="loading" class="active"></div>
-    <aside id="menu"   >
+    <aside id="menu"  class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -78,7 +90,7 @@
     <div class="scroll-wrap flex-col">
       <ul class="nav">
         
-              <li class="waves-block waves-effect active">
+              <li class="waves-block waves-effect">
                   <a href="/"  >
                     <i class="icon icon-lg icon-home"></i>
                     <span>主 页</span><i class="icon icon-lg icon-caret-left"></i>
@@ -148,7 +160,7 @@
         <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Cynen</div>
+        <div class="flex-col header-title ellipsis">hexo构建博客(二)</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -165,19 +177,16 @@
         </a>
     </div>
 </header>
-<header class="content-header index-header">
+<header class="content-header post-header">
     
     
     <div class="container fade-scale">
         <div id="myheader">
             <h1 class="title">
-                 
-                    Cynen
                 
             </h1>
             <h5 class="subtitle">
                 
-                    积极主动,以终为始!
                 
             </h5>
         </div>
@@ -185,34 +194,46 @@
 
 </header>
 
+
 <div class="container body-wrap">
-    <ul class="post-list">
     
-        <li class="post-list-item fade">
-            <article id="post-hexo构建博客-二"
-  class="article-card article-type-post" itemprop="blogPost">
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hexo-更换主题"><span class="post-toc-number">1.</span> <span class="post-toc-text">Hexo 更换主题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#GitHub下载GitHub代码库特别慢"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">GitHub下载GitHub代码库特别慢</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改主题配置"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">修改主题配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#tomotoes配置"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">tomotoes配置</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MD-简单总结"><span class="post-toc-number">2.</span> <span class="post-toc-text">MD 简单总结</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#问题及解决方"><span class="post-toc-number">3.</span> <span class="post-toc-text">问题及解决方</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考链接"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考链接</span></a></li></ol>
+        </nav>
+    </aside>
+   
+<article id="post-hexo构建博客-二"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
-    
+    <div class="post-card">
+        <h1 class="post-card-title">hexo构建博客(二)</h1>
+        <div class="post-meta">
+            <i class="icon icon-lg icon-calendar-o"></i>
+            发表于
+            <time class="post-time" title="2019-11-21 23:31:47" datetime="2019-11-21T15:31:47.000Z"  itemprop="datePublished">2019-11-21</time>
+
+            <br id="mybreak"/>
+            
+	<i class="icon icon-lg icon-folder-o"></i>
+	分类：<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD/">兴趣爱好</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></li></ul></li></ul>
 
 
-  
-    <h3 class="post-title" itemprop="name">
-      <a href="/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/">hexo构建博客(二)</a>
-    </h3>
-  
+            <i>·</i>
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>次浏览
+</span>
 
 
-
-
-     <div class="post-meta">
-        <time class="post-time" title="2019-11-21 23:31:47" datetime="2019-11-21T15:31:47.000Z"  itemprop="datePublished">2019-11-21</time>
-
-    </div>
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <p>本节主要是介绍hexo更换主题<br>以及在搭建hexo期间容易产生的问题.</p>
+        </div>
+        <div class="post-count-custom">
+            <i class="icon icon-lg icon-comment-o"></i>
+            阅读本文可能花费您&nbsp;<span class="post-count">3</span>&nbsp;分钟
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>本节主要是介绍hexo更换主题<br>以及在搭建hexo期间容易产生的问题.</p>
 <h1 id="Hexo-更换主题"><a href="#Hexo-更换主题" class="headerlink" title="Hexo 更换主题"></a>Hexo 更换主题</h1><p>经过上面的各种环境搭建，我们的博客可算是基本成形了，接下来就是对博客进行装修，选择一个我们喜欢的主题</p>
 <p>我们可以在hexo官方上选择我们喜欢的主题（PS：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">选择博客主题链接</a>）</p>
 <p>选择自己喜欢的主题后点击主题名进入发布人的github</p>
@@ -323,131 +344,117 @@
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>到这里,博客基本骨架搭建完成,后面只剩下自己写博客了.</p>
 <p><a href="https://Foxgrin.github.io/posts/29757/" target="_blank" rel="noopener">使用Hexo+github搭建属于自己的博客</a><br><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" target="_blank" rel="noopener">hexo史上最全搭建教程</a></p>
 
-    
-        <div class="post-more-div">
-            <a href="/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/" class="post-more waves-button">
-                Continue reading...
-            </a>
         </div>
-    </div>
-    
-    <div class="post-footer">
+
+        <blockquote class="post-copyright">
+    <div class="content">
         
+<span class="post-time">
+    Last updated: <time datetime="2019-11-21T16:26:39.148Z" itemprop="dateUpdated">2019-11-22 00:26:39</time>
+</span>
+
+
+        
+        原文链接：<a href="/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/" target="_blank" rel="external">http://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/</a>
+        
+    </div>
+    <footer>
+        <div onclick="location.href='http://cynen.github.io'">
+            <img src="/img/avatar.jpg" alt="Cynen">
+            <a>Cynen</a>
+        </div>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <nav class="myreward">
+            <a id="rewardBtn" href="javascript:;" target="_blank" rel="noopener"><span>打&nbsp;赏</span><span>装成好像很多人打赏的样子</span></a>
+        </nav>
+    </div>
+
+
+
+        <div class="post-footer">
+            
 	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
 
-    </div>
-    
-</article>
 
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-hexo构建博客-一"
-  class="article-card article-type-post" itemprop="blogPost">
-
+            
+<div class="page-share-wrap">
     
 
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a href="/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%B8%80/">hexo构建博客(一)</a>
-    </h3>
-  
-
-
-
-
-     <div class="post-meta">
-        <time class="post-time" title="2019-11-21 21:32:37" datetime="2019-11-21T13:32:37.000Z"  itemprop="datePublished">2019-11-21</time>
-
-    </div>
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <p>最近一直在做项目，好多东西都是新学习到的。遇到问题基本都是百度+google，看着别人的博客，总感觉有些知识点也是自己曾经写过，于是就总想着搭建自己的博客，奈何一直各种内心借口，一直拖到最近，发现 了  <a href="https://foxgrin.github.io" target="_blank" rel="noopener">https://foxgrin.github.io</a> 的个人博客，，，如是，仔细看了一下，发现然来搭建github博客如此简单。内心痒痒。。。</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我平时记录笔记基本只用有道笔记的，有道笔记的文件夹分类可以无限分，但是每次想找到自己以前记录的笔记时，总是花比较长的时间去找。其次，有道和word其实比较像的，当然在图片这一块做的不错。然后就想搭建自己的博客，从GitHub开始入手吧，等以后经验老道了，再去搭建自己的博客系统。<br>刚好，本次也研究了一下，就以搭建GitHub博客作为自己的开篇博文吧<del>~</del></p>
-<p><a href="https://foxgrin.github.io/posts/29757/#hexo%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA" target="_blank" rel="noopener">引用foxgrin</a></p>
-<h1 id="准备事项"><a href="#准备事项" class="headerlink" title="准备事项"></a>准备事项</h1><p>1、进入自己的GitHub账号，创建一个 yourname.github.io的Repository<br><code>项目名称一定要注意使用自己名称.github.io</code><br><code>注册GitHub就没啥好讲的,内事不决问百度,外事不决问谷歌</code><br>2、开启github pages<br>创建对应的Repository</p>
-<p>打开对应的仓库的setting项</p>
-<p>开启GitHub pages</p>
-<p>选择一款自己喜欢的主题（PS：这个可以先随便选，后面还可以更改）</p>
-<h1 id="hexo环境搭建"><a href="#hexo环境搭建" class="headerlink" title="hexo环境搭建"></a>hexo环境搭建</h1><p>官网才是正宗:  <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a></p>
-<p>1、安装Git<br>安装完成后,记得测试一下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git verison</span><br></pre></td></tr></table></figure>
-
-<p>2、安装Nodejs<br><code>百度教程一大堆</code><br>注意和官网要求的版本保持一致.<br>Notice: 一般安装完成nodejs后,就会带npm的.</p>
-<p>3、安装hexo<br>使用npm安装Hexo </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
-<p><code>-g 是指全局安装</code></p>
-<p>4、安装完成之后,测试hexo是否安装成功. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<p>5、初始化hexo文件夹：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-
-
-
-<h2 id="npm-安装太慢解决"><a href="#npm-安装太慢解决" class="headerlink" title="npm 安装太慢解决"></a>npm 安装太慢解决</h2><p>我就知道各位使用npm install的时候,会遇到没反应的情况.哈哈.</p>
-<p>这个主要是由于npm安装是去国外源下载,由于某种原因,GFW墙了,所以我们需要想点办法去获得我们需要安装的文件.<br>最简单的办法: 类似Docker配置国内源的方式,将npm的安装源,替换成国内的. 别急,替换国内的源: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry</span><br></pre></td></tr></table></figure>
-<p>不出所料,返回的应该是 <a href="http://registry.npmjs.org" target="_blank" rel="noopener">http://registry.npmjs.org</a><br> 替换成国内阿里云</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry http://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<p>再试一下,飞一般的感觉哦<del>~</del></p>
-<h1 id="hexo-和GitHub-pages关联"><a href="#hexo-和GitHub-pages关联" class="headerlink" title="hexo 和GitHub pages关联"></a>hexo 和GitHub pages关联</h1><p>打开我们hexo博客的根目录.找到 <code>_config.yml</code>配置文件,打开.</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://foxgrin.github.io/img/Hexo/16.png" alt="enter description here" title="">
-                </div>
-                <div class="image-caption">enter description here</div>
-            </figure>
-
-<p>滑到最下方,找到deploy: </p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://foxgrin.github.io/img/Hexo/17.png" alt="enter description here" title="">
-                </div>
-                <div class="image-caption">enter description here</div>
-            </figure>
-
-<p>其中themes是主题,后面更换主题会用到<br>修改部署的:</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://foxgrin.github.io/img/Hexo/18.png" alt="enter description here" title="">
-                </div>
-                <div class="image-caption">enter description here</div>
-            </figure>
-
-<p>注意所有的配置项,冒号后面都有空格.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo generate 或者 hexo g</span><br><span class="line">hexo deploy 或者 hexo d</span><br></pre></td></tr></table></figure>
-<p>会自动将我们的代码部署到github.io网站上.</p>
-<p>至此,我们的博客基本已经搭建完成,下一节,讲解自定义主题.</p>
-
-    
-        <div class="post-more-div">
-            <a href="/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%B8%80/" class="post-more waves-button">
-                Continue reading...
-            </a>
-        </div>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/&title=《hexo构建博客(二)》 — Cynen&pic=http://cynen.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/&title=《hexo构建博客(二)》 — Cynen&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《hexo构建博客(二)》 — Cynen&url=http://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/&via=http://cynen.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
     </ul>
+ </div>
+
+
+
+    <a href="javascript:;" target="_blank" rel="noopener" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
 
     
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%B8%80/" id="post-next" class="post-nav-link">
+        <h4 class="title" data-hover="下一篇：hexo构建博客(一)">下一篇：hexo构建博客(一)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+    
+
+    
+
+    
+
+
+</article>
 
 </div>
 
@@ -495,8 +502,74 @@
 
     </main>
     
+        
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        <span>感谢您的鼓励支持！</span>
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" data-img="/img/donate.jpg" alt="打赏二维码">
+        </div>
+        
+        <i class="icon icon-caret-up"></i>
+    </div>
+</div>
+
+
+    
     <div class="mask" id="mask"></div>
 <a href="javascript:;" target="_blank" rel="noopener" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/&title=《hexo构建博客(二)》 — Cynen&pic=http://cynen.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/&title=《hexo构建博客(二)》 — Cynen&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《hexo构建博客(二)》 — Cynen&url=http://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/&via=http://cynen.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p class="wechatshare">扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/" alt="微信分享二维码">
+</div>
+
+
 
 
     <!-- waves按钮特效 -->
@@ -504,7 +577,7 @@
 
 <!-- 主题配置脚本 -->
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 </script>
 
 <!-- jquery -->
