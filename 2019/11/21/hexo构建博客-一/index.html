@@ -39,16 +39,20 @@
 
 
     
-    <meta name="description" content="[toc] 最近一直在做项目，好多东西都是新学习到的。遇到问题基本都是百度+google，看着别人的博客，总感觉有些知识点也是自己曾经写过，于是就总想着搭建自己的博客，奈何一直各种内心借口，一直拖到最近，发现 了  https:&#x2F;&#x2F;foxgrin.github.io 的个人博客，，，如是，仔细看了一下，发现然来搭建github博客如此简单。内心痒痒。。。 前言我平时记录笔记基本只用有道笔记的，有道">
+    <meta name="description" content="最近一直在做项目，好多东西都是新学习到的。遇到问题基本都是百度+google，看着别人的博客，总感觉有些知识点也是自己曾经写过，于是就总想着搭建自己的博客，奈何一直各种内心借口，一直拖到最近，发现 了  https:&#x2F;&#x2F;foxgrin.github.io 的个人博客，，，如是，仔细看了一下，发现然来搭建github博客如此简单。内心痒痒。。。 前言我平时记录笔记基本只用有道笔记的，有道笔记的文件夹">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo构建博客(一)">
 <meta property="og:url" content="http:&#x2F;&#x2F;cynen.github.io&#x2F;2019&#x2F;11&#x2F;21&#x2F;hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%B8%80&#x2F;index.html">
 <meta property="og:site_name" content="Cynen">
-<meta property="og:description" content="[toc] 最近一直在做项目，好多东西都是新学习到的。遇到问题基本都是百度+google，看着别人的博客，总感觉有些知识点也是自己曾经写过，于是就总想着搭建自己的博客，奈何一直各种内心借口，一直拖到最近，发现 了  https:&#x2F;&#x2F;foxgrin.github.io 的个人博客，，，如是，仔细看了一下，发现然来搭建github博客如此简单。内心痒痒。。。 前言我平时记录笔记基本只用有道笔记的，有道">
+<meta property="og:description" content="最近一直在做项目，好多东西都是新学习到的。遇到问题基本都是百度+google，看着别人的博客，总感觉有些知识点也是自己曾经写过，于是就总想着搭建自己的博客，奈何一直各种内心借口，一直拖到最近，发现 了  https:&#x2F;&#x2F;foxgrin.github.io 的个人博客，，，如是，仔细看了一下，发现然来搭建github博客如此简单。内心痒痒。。。 前言我平时记录笔记基本只用有道笔记的，有道笔记的文件夹">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-11-21T14:57:44.938Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;foxgrin.github.io&#x2F;img&#x2F;Hexo&#x2F;16.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;foxgrin.github.io&#x2F;img&#x2F;Hexo&#x2F;17.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;foxgrin.github.io&#x2F;img&#x2F;Hexo&#x2F;18.png">
+<meta property="og:updated_time" content="2019-11-21T15:26:20.355Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;foxgrin.github.io&#x2F;img&#x2F;Hexo&#x2F;16.png">
     
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link id="style" rel="stylesheet" href="/css/style.css?v=3.0">
@@ -192,7 +196,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#准备事项"><span class="post-toc-number">2.</span> <span class="post-toc-text">准备事项</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#hexo环境搭建"><span class="post-toc-number">3.</span> <span class="post-toc-text">hexo环境搭建</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#准备事项"><span class="post-toc-number">2.</span> <span class="post-toc-text">准备事项</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#hexo环境搭建"><span class="post-toc-number">3.</span> <span class="post-toc-text">hexo环境搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#npm-安装太慢解决"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">npm 安装太慢解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#hexo-和GitHub-pages关联"><span class="post-toc-number">4.</span> <span class="post-toc-text">hexo 和GitHub pages关联</span></a></li></ol>
         </nav>
     </aside>
    
@@ -208,9 +212,8 @@
 
             <br id="mybreak"/>
             
-<script>
-	mybreak.style="display:none";
-</script>
+	<i class="icon icon-lg icon-folder-o"></i>
+	分类：<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD/">兴趣爱好</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></li></ul></li></ul>
 
 
             <i>·</i>
@@ -223,42 +226,78 @@
         </div>
         <div class="post-count-custom">
             <i class="icon icon-lg icon-comment-o"></i>
-            阅读本文可能花费您&nbsp;<span class="post-count">3</span>&nbsp;分钟
+            阅读本文可能花费您&nbsp;<span class="post-count">2</span>&nbsp;分钟
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>[toc]</p>
-<p>最近一直在做项目，好多东西都是新学习到的。遇到问题基本都是百度+google，看着别人的博客，总感觉有些知识点也是自己曾经写过，于是就总想着搭建自己的博客，奈何一直各种内心借口，一直拖到最近，发现 了  <a href="https://foxgrin.github.io" target="_blank" rel="noopener">https://foxgrin.github.io</a> 的个人博客，，，如是，仔细看了一下，发现然来搭建github博客如此简单。内心痒痒。。。</p>
+            <p>最近一直在做项目，好多东西都是新学习到的。遇到问题基本都是百度+google，看着别人的博客，总感觉有些知识点也是自己曾经写过，于是就总想着搭建自己的博客，奈何一直各种内心借口，一直拖到最近，发现 了  <a href="https://foxgrin.github.io" target="_blank" rel="noopener">https://foxgrin.github.io</a> 的个人博客，，，如是，仔细看了一下，发现然来搭建github博客如此简单。内心痒痒。。。</p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我平时记录笔记基本只用有道笔记的，有道笔记的文件夹分类可以无限分，但是每次想找到自己以前记录的笔记时，总是花比较长的时间去找。其次，有道和word其实比较像的，当然在图片这一块做的不错。然后就想搭建自己的博客，从GitHub开始入手吧，等以后经验老道了，再去搭建自己的博客系统。<br>刚好，本次也研究了一下，就以搭建GitHub博客作为自己的开篇博文吧<del>~</del></p>
+<p><a href="https://foxgrin.github.io/posts/29757/#hexo%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA" target="_blank" rel="noopener">引用foxgrin</a></p>
 <h1 id="准备事项"><a href="#准备事项" class="headerlink" title="准备事项"></a>准备事项</h1><p>1、进入自己的GitHub账号，创建一个 yourname.github.io的Repository<br><code>项目名称一定要注意使用自己名称.github.io</code><br><code>注册GitHub就没啥好讲的,内事不决问百度,外事不决问谷歌</code><br>2、开启github pages<br>创建对应的Repository</p>
 <p>打开对应的仓库的setting项</p>
 <p>开启GitHub pages</p>
 <p>选择一款自己喜欢的主题（PS：这个可以先随便选，后面还可以更改）</p>
 <h1 id="hexo环境搭建"><a href="#hexo环境搭建" class="headerlink" title="hexo环境搭建"></a>hexo环境搭建</h1><p>官网才是正宗:  <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a></p>
 <p>1、安装Git<br>安装完成后,记得测试一下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">查看git版本</span><br><span class="line">git verison</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git verison</span><br></pre></td></tr></table></figure>
 
-<p>2、安装Nodejs</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">注意和官网要求的版本保持一致.</span><br><span class="line">Notice: 一般安装完成nodejs后,就会带npm的.</span><br><span class="line"></span><br><span class="line">3、安装hexo</span><br><span class="line">使用npm安装Hexo</span><br></pre></td></tr></table></figure>
-<p>npm install -g hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">`-g 是指全局安装`</span><br><span class="line"></span><br><span class="line">4、安装完成之后,测试hexo是否安装成功.</span><br></pre></td></tr></table></figure>
-<p>hexo -v</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![enter description here](./hexo构建博客-一/3.png)</span><br><span class="line"></span><br><span class="line">5、初始化hexo文件夹：</span><br></pre></td></tr></table></figure>
-<p>hexo init </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img 2.png 初始化hexo文件夹&#125;</span><br><span class="line">注意执行此命令的时候,当前所处的目录.</span><br><span class="line">完成后显示Start blogging with Hexo这串提示就说明安装成功啦</span><br><span class="line"></span><br><span class="line">6、输入 `npm install` ，安装所需要的组件。此组件均安装在node_modules 文件夹中。</span><br><span class="line"></span><br><span class="line">此时，本地的博客已经初步搭建完成。 </span><br><span class="line">输入： `hexo s` 或者 `hexo server` 在本地启动服务,在4000端口.</span><br><span class="line">打开浏览器访问: localhost:4000 即可看到效果.</span><br><span class="line">![enter description here](./hexo构建博客-一/20.png)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## npm 安装太慢解决</span><br><span class="line">我就知道各位使用npm install的时候,会遇到没反应的情况.哈哈.</span><br><span class="line"></span><br><span class="line">这个主要是由于npm安装是去国外源下载,由于某种原因,GFW墙了,所以我们需要想点办法去获得我们需要安装的文件. </span><br><span class="line">最简单的办法: 类似Docker配置国内源的方式,将npm的安装源,替换成国内的. 别急,替换国内的源:</span><br></pre></td></tr></table></figure>
-<p>npm config get registry</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">不出所料,返回的应该是 http://registry.npmjs.org</span><br><span class="line"> 替换成国内阿里云</span><br></pre></td></tr></table></figure>
-<p>npm config set registry <a href="http://registry.npm.taobao.org" target="_blank" rel="noopener">http://registry.npm.taobao.org</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">再试一下,飞一般的感觉哦~~~</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># hexo 和GitHub pages关联</span><br><span class="line">打开我们hexo博客的根目录.找到 `_config.yml`配置文件,打开.</span><br><span class="line">![enter description here](./hexo构建博客-一/16.png)</span><br><span class="line"></span><br><span class="line">滑到最下方,找到deploy: </span><br><span class="line">![enter description here](./hexo构建博客-一/17.png)</span><br><span class="line"></span><br><span class="line">其中themes是主题,后面更换主题会用到</span><br><span class="line">修改部署的:</span><br><span class="line">![enter description here](./hexo构建博客-一/18.png)</span><br><span class="line"></span><br><span class="line">注意所有的配置项,冒号后面都有空格.</span><br></pre></td></tr></table></figure>
-<p>hexo clean<br>hexo generate 或者 hexo g<br>hexo deploy 或者 hexo d</p>
-<pre><code>会自动将我们的代码部署到github.io网站上.
-</code></pre>
+<p>2、安装Nodejs<br><code>百度教程一大堆</code><br>注意和官网要求的版本保持一致.<br>Notice: 一般安装完成nodejs后,就会带npm的.</p>
+<p>3、安装hexo<br>使用npm安装Hexo </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+<p><code>-g 是指全局安装</code></p>
+<p>4、安装完成之后,测试hexo是否安装成功. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<p>5、初始化hexo文件夹：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="npm-安装太慢解决"><a href="#npm-安装太慢解决" class="headerlink" title="npm 安装太慢解决"></a>npm 安装太慢解决</h2><p>我就知道各位使用npm install的时候,会遇到没反应的情况.哈哈.</p>
+<p>这个主要是由于npm安装是去国外源下载,由于某种原因,GFW墙了,所以我们需要想点办法去获得我们需要安装的文件.<br>最简单的办法: 类似Docker配置国内源的方式,将npm的安装源,替换成国内的. 别急,替换国内的源: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry</span><br></pre></td></tr></table></figure>
+<p>不出所料,返回的应该是 <a href="http://registry.npmjs.org" target="_blank" rel="noopener">http://registry.npmjs.org</a><br> 替换成国内阿里云</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry http://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>再试一下,飞一般的感觉哦<del>~</del></p>
+<h1 id="hexo-和GitHub-pages关联"><a href="#hexo-和GitHub-pages关联" class="headerlink" title="hexo 和GitHub pages关联"></a>hexo 和GitHub pages关联</h1><p>打开我们hexo博客的根目录.找到 <code>_config.yml</code>配置文件,打开.</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://foxgrin.github.io/img/Hexo/16.png" alt="enter description here" title="">
+                </div>
+                <div class="image-caption">enter description here</div>
+            </figure>
+
+<p>滑到最下方,找到deploy: </p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://foxgrin.github.io/img/Hexo/17.png" alt="enter description here" title="">
+                </div>
+                <div class="image-caption">enter description here</div>
+            </figure>
+
+<p>其中themes是主题,后面更换主题会用到<br>修改部署的:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://foxgrin.github.io/img/Hexo/18.png" alt="enter description here" title="">
+                </div>
+                <div class="image-caption">enter description here</div>
+            </figure>
+
+<p>注意所有的配置项,冒号后面都有空格.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo generate 或者 hexo g</span><br><span class="line">hexo deploy 或者 hexo d</span><br></pre></td></tr></table></figure>
+<p>会自动将我们的代码部署到github.io网站上.</p>
+<p>至此,我们的博客基本已经搭建完成,下一节,讲解自定义主题.</p>
+
         </div>
 
         <blockquote class="post-copyright">
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-21T14:57:44.938Z" itemprop="dateUpdated">2019-11-21 22:57:44</time>
+    Last updated: <time datetime="2019-11-21T15:26:20.355Z" itemprop="dateUpdated">2019-11-21 23:26:20</time>
 </span>
 
 
