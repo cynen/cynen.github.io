@@ -27,7 +27,7 @@ menu:
 menu2:
   envelope-o:
     text: Email
-    url: mailto:1755811882@qq.com
+    url: mailto:cynen@foxmail.com
     target: _parent
   github:
     text: Github
@@ -56,10 +56,10 @@ mymotto:
   content: 他山之石,可以攻玉
 
 # 网站开启时间
-startime: 2017/10/11
+startime: 2019/11/21
 
 # 首页副标题
-homesubtitle: 积极主动,以终为始.
+homesubtitle: 积极主动,以终为始!
 
 # 归档页标题
 archivestitle: 路漫漫其修远兮
@@ -71,7 +71,8 @@ tagstitle: 不积小流无以成江海
 categoriestitle: 不积跬步无以至千里
 
 # 关于页标题
-aboutitle: 一个坏掉的番茄
+# aboutitle: 一个坏掉的番茄
+aboutitle: 梦想总是要有的,万一实现了呢?
 
 # 设置 Android L Chrome 浏览器状态栏颜色
 color: '#77AAFF'
@@ -83,7 +84,7 @@ categories_title: 分类
 
 # 文章截断
 excerpt_render: true
-excerpt_length: 175
+excerpt_length: 100
 excerpt_link: 阅读全文 »
 mathjax: false
 archive_yearly: true
@@ -97,7 +98,7 @@ share: true
 # 是否开启打赏，关闭 reward: false
 reward:
   title: 感谢您的鼓励支持！     #打赏回馈话语
-  wechat: false # /img/wechat.jpg     #微信，关闭设为 false
+  wechat: /img/wechat.jpg     #微信，关闭设为 false
   alipay: false     #支付宝，关闭设为 false
   wechatalipay: /img/donate.jpg   #点击打赏时显示的图片
 
