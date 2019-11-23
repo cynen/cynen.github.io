@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>hexo构建博客(三)</title>
+    <url>/2019/11/24/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%B8%89/</url>
+    <content><![CDATA[<h1 id="ButterFly-主题的应用"><a href="#ButterFly-主题的应用" class="headerlink" title="ButterFly 主题的应用."></a>ButterFly 主题的应用.</h1><h2 id="Butterfly主题下载"><a href="#Butterfly主题下载" class="headerlink" title="Butterfly主题下载."></a>Butterfly主题下载.</h2><p>下载参照上一步的变更主题的链接: <a href="https://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/">hexo构建博客(二)</a>,直接搜索 Butterfly</p>
+<p><img alt data-src="/images/2019/11/3/1.png" class="lazyload"></p>
+<p>根据README文档,下载对应的主题.<br>1.并且修改<code>_config.yml</code>配置文件,此配置文件是hexo的配置文件,注意和themes主题的配置文件区分.<br>2. 安装对应的依赖.<br><img alt data-src="/images/2019/11/3/2.png" class="lazyload"></p>
+<p>3.启动服务 <code>hexo s</code> 打开浏览器,输入  <code>localhost:4000</code> 即可看到效果.</p>
+<p>参考: <a href="https://roger0917.github.io/about/" target="_blank" rel="noopener">roger博客</a></p>
+<h2 id="自定义参数配置"><a href="#自定义参数配置" class="headerlink" title="自定义参数配置."></a>自定义参数配置.</h2><p>ButterFly 主题的文档有时候打不开,可以参考 <a href="https://molunerfinn.com/hexo-theme-melody-doc/theme-config.html#highlight-theme" target="_blank" rel="noopener">hexo-theme-melody</a>  ButterFly是基于此主题开发的.</p>
+<p>打开 ButterFly 主题的配置文件.针对自定义的参数进行配置.</p>
+<p>基本上看英文就知道是什么了,在此,重点关注几个地方:</p>
+<p>1.language: 配置语言.  此配置项应该是在hexo的配置文件中配置.<br><code>目前配置完成后,貌似偶尔不生效.</code><br>解决办法:将对应主题下的其他language文件全部删除,只留对应配置的语言文件即可解决此问题(不知道为啥).</p>
+<p>确保对应的主题中的themes/languages 文件夹下有对应的文件.<br><img alt data-src="/images/2019/11/3/3.png" class="lazyload"></p>
+<p>2.修改菜单为中文.<br><img alt data-src="/images/2019/11/3/4.png" class="lazyload"></p>
+<p>3.页面动态效果配置:</p>
+<p>需要的就将对应的置为: true即可.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">canvas_ribbon: 彩带</span><br><span class="line">canvas_ribbon_piao: 动态彩带</span><br><span class="line">canvas_nest: 页面类似线条网状蒲公英</span><br><span class="line">fireworks: 烟火特效,点击后烟花</span><br><span class="line">click_heart: 点击时,弹出爱心</span><br><span class="line">ClickShowText: 点击时,出现文字</span><br></pre></td></tr></table></figure>
+<p>简繁转化我关闭了.<br><img alt data-src="/images/2019/11/3/5.png" class="lazyload"></p>
+<p>其他的可以自行摸索.</p>
+<h2 id="搜索配置"><a href="#搜索配置" class="headerlink" title="搜索配置"></a>搜索配置</h2><p>我们可以看到,Butterfly给我们提供了2种搜索模式.</p>
+<p><img alt data-src="/images/2019/11/3/6.png" class="lazyload"></p>
+<p>由于第一种需要配置AppID等参数,我们暂时关闭掉.</p>
+<p>开启第二种搜索. [只有开启搜索后,页面上才会有搜索框]<br><img alt data-src="/images/2019/11/3/7.png" class="lazyload"></p>
+<p>点击搜索,报错.<br><img alt data-src="/images/2019/11/3/8.png" class="lazyload"></p>
+<p>解决: 找了各种参数,都没有找到怎么解决,百度一下. 发现local_search居然是hexo自带的功能…</p>
+<p>参考:<br><a href="https://www.jianshu.com/p/02afabcae502" target="_blank" rel="noopener">Hexo博客,搜索无效解决</a><br><a href="https://www.jianshu.com/p/519b45730824" target="_blank" rel="noopener">Hexo开启站内搜索</a><br>额… 是因为需要安装插件的原因</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p>安装完毕后,再刷新页面.<br><img alt data-src="/images/2019/11/3/9.png" class="lazyload"></p>
+<p>搜索可用!</p>
+<h2 id="开启评论功能"><a href="#开启评论功能" class="headerlink" title="开启评论功能"></a>开启评论功能</h2><p>ButterFly 主题,提供了2中评论功能的插件.<br>一种是 <a href="https://www.jianshu.com/p/656e6101bf0f" target="_blank" rel="noopener">gitalk</a><br>一种是 <a href>valine</a></p>
+<p>gitalk的使用:<br>参考:<br><a href="https://www.jianshu.com/p/656e6101bf0f" target="_blank" rel="noopener">在个人博客添加评论</a></p>
+<p>貌似我配置完之后,没有效果.(有效果的给我反馈一下,我好取消我的learnCloud账号.)<br><img alt data-src="/images/2019/11/3/10.png" class="lazyload"></p>
+<p>既然gitalk实现不了, 那就使用valine来实现吧.<br>配置 valine:<br><img alt data-src="/images/2019/11/3/11.png" class="lazyload"><br>效果:<br><img alt data-src="/images/2019/11/3/12.png" class="lazyload"><br>OK,实现了评论功能!</p>
+<p>使用valine注意事项:<br><code>需要申请learnCloud账号,要支付宝实名认证!要支付宝实名认证!要支付宝实名认证!</code></p>
+<p>注册过程我就不详述了,自己按照步骤来即可的.</p>
+<p>参考 : <a href="https://valine.js.org/quickstart.html" target="_blank" rel="noopener">learnCloud入口</a></p>
+<p>Hexo博客,从我突发神经想搞,到现在基本知道怎么整,前后差不多花了一周时间.</p>
+<p>一抬头,发现现在都凌晨 2点了,好困好饿…我先去吃碗泡面,休息了,休息了.</p>
+]]></content>
+      <categories>
+        <category>兴趣爱好</category>
+        <category>个人博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo构建博客(二)</title>
+    <url>/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/</url>
+    <content><![CDATA[<p>本节主要是介绍hexo更换主题<br>以及在搭建hexo期间容易产生的问题.</p>
+<h1 id="Hexo-更换主题"><a href="#Hexo-更换主题" class="headerlink" title="Hexo 更换主题"></a>Hexo 更换主题</h1><p>经过上面的各种环境搭建，我们的博客可算是基本成形了，接下来就是对博客进行装修，选择一个我们喜欢的主题</p>
+<p>我们可以在hexo官方上选择我们喜欢的主题（PS：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">选择博客主题链接</a>）</p>
+<p>选择自己喜欢的主题后点击主题名进入发布人的github</p>
+<p>这里以我的博客选择的主题为例<br><img alt="选取的博客" data-src="/images/2019/11/21.png" class="lazyload"></p>
+<p>进入对应的GitHub项目之后,获取对应的项目下载链接.</p>
+<p>复制主题链接</p>
+<p>然后回到blog目录下，找到并进入theme文件夹</p>
+<p>右键选择git bash here</p>
+<p>输入git clone +你选择的主题链接</p>
+<p>下载所选主题</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone xxx@ ..   themes/tomotoes</span><br></pre></td></tr></table></figure>
+<p><img alt data-src="https://foxgrin.github.io/img/Hexo/23.png" class="lazyload"></p>
+<p>然后可以将主题文件夹名修改成较为简便好记的名字，这里修改成tomotoes</p>
+<p>然后在blog目录下的_config.yml配置文件中，也就是刚才说的theme配置</p>
+<p>修改成所选的主题名</p>
+<p><img alt data-src="https://foxgrin.github.io/img/Hexo/24.png" class="lazyload"></p>
+<h2 id="GitHub下载GitHub代码库特别慢"><a href="#GitHub下载GitHub代码库特别慢" class="headerlink" title="GitHub下载GitHub代码库特别慢"></a>GitHub下载GitHub代码库特别慢</h2><p>在下载tomotoes这个主题项目的时候,可能动不动遇到比较卡的情况,一个小项目clone到信心崩溃.</p>
+<p>教一个特别骚气的招数: <code>忘记是在哪里看到的,作者看到,可以联系我</code></p>
+<p>1.将我们需要clone的GitHub代码,fork到自己的仓库中.<br>2.登录国内一些代码平台,例如 <a href="https://gitee.com/" target="_blank" rel="noopener">码云</a><br>3.登陆后,将自己的GitHub代码库同步到码云.<br>4.本地直接clone码云上面的项目,速度快的不要不要的. [需要在码云注册.]</p>
+<h2 id="修改主题配置"><a href="#修改主题配置" class="headerlink" title="修改主题配置"></a>修改主题配置</h2><p>在替换主题后,使用 <code>hexo s</code>启动后,预览,发现界面排版不正常.<br><img alt data-src="/images/2019/11/25.png" class="lazyload"></p>
+<p>需要进入到对应的GitHub阅读文档.[也就是对应的主题提供的GitHub项目]</p>
+<p>可见虽然主题更换了，但是一些css和js特效并没有显示出来，可能是这个主题需要特殊的一些配置文件，这时候我们就需要进入设计者的github主页中寻找接下来需要的设置</p>
+<p>我们来到设计者的github页面，在主题下载链接下方会发现一个主题配置的要求<br><img alt data-src="https://foxgrin.github.io/img/Hexo/26.png" class="lazyload"></p>
+<p>接下来就要仔细阅读这些要求，这里还是以我的主题为例</p>
+<p>在Readme.md文件中有一些主题脚本或者css显示所需的配置安装<br><img alt data-src="https://foxgrin.github.io/img/Hexo/27.png" class="lazyload"></p>
+<p>按照上面的配置命令逐一安装，这里就不一一说明了<code>这里需要安装好几个插件</code></p>
+<p>安装完成后再次运行hexo s</p>
+<p>再来看看页面,发现已经恢复正常了.</p>
+<h2 id="tomotoes配置"><a href="#tomotoes配置" class="headerlink" title="tomotoes配置"></a>tomotoes配置</h2><p>1.开启访问统计:<br><img alt="访问统计" data-src="/images/2019/11/1.png" class="lazyload"></p>
+<p>参考: <a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener">不蒜子|不知</a><br>按照说明配置,很简单.</p>
+<h1 id="MD-简单总结"><a href="#MD-简单总结" class="headerlink" title="MD 简单总结"></a>MD 简单总结</h1><p>(1)文件开头：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line">title: xxx</span><br><span class="line">tags: xxx</span><br><span class="line">categories: xxx</span><br><span class="line">description: xxx</span><br><span class="line">date: 2018/7/12 22:00:00</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>(2)文章摘要：<br><code>xxx&lt;!--more--&gt;</code></p>
+<p>(3)图片插入：<br><code>![](/img/1.png)</code><br>（PS：在/blog/source目录下创建img文件夹，以后上传到文章的图片都保存在这里面）</p>
+<p>(4)http链接插入：<br><code>[内容](https://)</code></p>
+<p>(5)代码区：<br><code>``` code ```</code></p>
+<p>(6)标题设置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一阶标题 </span><br><span class="line">##二阶标题 </span><br><span class="line">###三阶标题 </span><br><span class="line">####四阶标题 </span><br><span class="line">#####五阶标题 </span><br><span class="line">######六阶标题</span><br></pre></td></tr></table></figure>
+<p>这里md文件的编写，我强烈推荐使用Typora编辑器</p>
+<p>最后，一切改动完成后，在blog目录下打开git，输入hexo d –g命令将改动更新到github上即可</p>
+<h1 id="问题及解决方"><a href="#问题及解决方" class="headerlink" title="问题及解决方"></a>问题及解决方</h1><p>1.点击about或者左侧的分类,tags页面报错或者提示找不到.<br>解决办法:</p>
+<p>1) 开启标签页:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>执行完成会发现/blog/source下面多了tags文件夹，里面有一个index.md文件，在文件头内容中添加：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">layout: tags</span><br><span class="line">comments: false</span><br></pre></td></tr></table></figure>
+<p>以此类推,开其他页</p>
+<p>开启关于页:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
+<p>在index.md文件中添加内容:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">layout: about</span><br><span class="line">comments: true</span><br><span class="line">reward: false</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>到这里,博客基本骨架搭建完成,后面只剩下自己写博客了.</p>
+<p><a href="https://Foxgrin.github.io/posts/29757/" target="_blank" rel="noopener">使用Hexo+github搭建属于自己的博客</a><br><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" target="_blank" rel="noopener">hexo史上最全搭建教程</a></p>
+]]></content>
+      <categories>
+        <category>兴趣爱好</category>
+        <category>个人博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo构建博客(一)</title>
+    <url>/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%B8%80/</url>
+    <content><![CDATA[<p>最近一直在做项目，好多东西都是新学习到的。遇到问题基本都是百度+google，看着别人的博客，总感觉有些知识点也是自己曾经写过，于是就总想着搭建自己的博客，奈何一直各种内心借口，一直拖到最近，发现 了  <a href="https://foxgrin.github.io" target="_blank" rel="noopener">https://foxgrin.github.io</a> 的个人博客，，，如是，仔细看了一下，发现然来搭建github博客如此简单。内心痒痒。。。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我平时记录笔记基本只用有道笔记的，有道笔记的文件夹分类可以无限分，但是每次想找到自己以前记录的笔记时，总是花比较长的时间去找。其次，有道和word其实比较像的，当然在图片这一块做的不错。然后就想搭建自己的博客，从GitHub开始入手吧，等以后经验老道了，再去搭建自己的博客系统。<br>刚好，本次也研究了一下，就以搭建GitHub博客作为自己的开篇博文吧<del>~</del></p>
+<p><a href="https://foxgrin.github.io/posts/29757/#hexo%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA" target="_blank" rel="noopener">引用foxgrin</a></p>
+<h1 id="准备事项"><a href="#准备事项" class="headerlink" title="准备事项"></a>准备事项</h1><p>1、进入自己的GitHub账号，创建一个 yourname.github.io的Repository<br><code>项目名称一定要注意使用自己名称.github.io</code><br><code>注册GitHub就没啥好讲的,内事不决问百度,外事不决问谷歌</code><br>2、开启github pages<br>创建对应的Repository</p>
+<p>打开对应的仓库的setting项</p>
+<p>开启GitHub pages</p>
+<p>选择一款自己喜欢的主题（PS：这个可以先随便选，后面还可以更改）</p>
+<h1 id="hexo环境搭建"><a href="#hexo环境搭建" class="headerlink" title="hexo环境搭建"></a>hexo环境搭建</h1><p>官网才是正宗:  <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a></p>
+<p>1、安装Git<br>安装完成后,记得测试一下:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git verison</span><br></pre></td></tr></table></figure>
+
+<p>2、安装Nodejs<br><code>百度教程一大堆</code><br>注意和官网要求的版本保持一致.<br>Notice: 一般安装完成nodejs后,就会带npm的.</p>
+<p>3、安装hexo<br>使用npm安装Hexo </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+<p><code>-g 是指全局安装</code></p>
+<p>4、安装完成之后,测试hexo是否安装成功. </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<p>5、初始化hexo文件夹：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>]]></content>
+      <categories>
+        <category>兴趣爱好</category>
+        <category>个人博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>

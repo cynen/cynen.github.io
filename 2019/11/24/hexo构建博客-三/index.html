@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="zh_CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>hexo构建博客(三) | Cynen</title><meta name="description" content="hexo构建博客(三)"><meta name="keywords" content="hexo"><meta name="author" content="Cynen"><meta name="copyright" content="Cynen"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="preconnect" href="//cdn.jsdelivr.net"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="hexo构建博客(三)"><meta name="twitter:description" content="hexo构建博客(三)"><meta name="twitter:image" content="http://cynen.github.io/img/study.jpg"><meta property="og:type" content="article"><meta property="og:title" content="hexo构建博客(三)"><meta property="og:url" content="http://cynen.github.io/2019/11/24/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%B8%89/"><meta property="og:site_name" content="Cynen"><meta property="og:description" content="hexo构建博客(三)"><meta property="og:image" content="http://cynen.github.io/img/study.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://cynen.github.io/2019/11/24/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%B8%89/"><link rel="next" title="hexo构建博客(二)" href="http://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: undefined,
+  highlight_copy: 'false',
+  highlight_lang: 'true',
+  highlight_shrink: 'false',
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  copyright: undefined,
+  copy_copyright_js: false,
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善","fontSize":"15px"},
+  medium_zoom: 'false',
+  Snackbar: undefined
+  
+}</script></head><body><div id="header"> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Cynen</a></span><i class="fa fa-bars fa-fw toggle-menu pull_right close" aria-hidden="true"></i><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 列表</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lazyload avatar_img" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">3</div></a></div></div><div class="mobile_data_item is_center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">1</div></a></div></div><div class="mobile_data_item is_center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">2</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 列表</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></div><div id="mobile-sidebar-toc"><div class="toc_mobile_headline">目录</div><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#ButterFly-主题的应用"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text">ButterFly 主题的应用.</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#Butterfly主题下载"><span class="toc_mobile_items-number">1.1.</span> <span class="toc_mobile_items-text">Butterfly主题下载.</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#自定义参数配置"><span class="toc_mobile_items-number">1.2.</span> <span class="toc_mobile_items-text">自定义参数配置.</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#搜索配置"><span class="toc_mobile_items-number">1.3.</span> <span class="toc_mobile_items-text">搜索配置</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#开启评论功能"><span class="toc_mobile_items-number">1.4.</span> <span class="toc_mobile_items-text">开启评论功能</span></a></li></ol></li></ol></div></div><div id="body-wrap"><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true">     </i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ButterFly-主题的应用"><span class="toc-number">1.</span> <span class="toc-text">ButterFly 主题的应用.</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Butterfly主题下载"><span class="toc-number">1.1.</span> <span class="toc-text">Butterfly主题下载.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义参数配置"><span class="toc-number">1.2.</span> <span class="toc-text">自定义参数配置.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搜索配置"><span class="toc-number">1.3.</span> <span class="toc-text">搜索配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启评论功能"><span class="toc-number">1.4.</span> <span class="toc-text">开启评论功能</span></a></li></ol></li></ol></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/study.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">hexo构建博客(三)</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-11-24<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-11-24</time><span class="post-meta__separator mobile_hidden">|</span><span class="mobile_hidden"><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD/">兴趣爱好</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></span><div class="post-meta-wordcount"><i class="fa fa-file-word-o post-meta__icon" aria-hidden="true"></i><span>字数总计: </span><span class="word-count">783</span><span class="post-meta__separator">|</span><i class="fa fa-clock-o post-meta__icon" aria-hidden="true"></i><span>阅读时长: 2 分钟</span><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true">       </i><span>阅读量: </span><span id="busuanzi_value_page_pv"></span></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h1 id="ButterFly-主题的应用"><a href="#ButterFly-主题的应用" class="headerlink" title="ButterFly 主题的应用."></a>ButterFly 主题的应用.</h1><h2 id="Butterfly主题下载"><a href="#Butterfly主题下载" class="headerlink" title="Butterfly主题下载."></a>Butterfly主题下载.</h2><p>下载参照上一步的变更主题的链接: <a href="https://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/">hexo构建博客(二)</a>,直接搜索 Butterfly</p>
+<p><img alt data-src="/images/2019/11/3/1.png" class="lazyload"></p>
+<p>根据README文档,下载对应的主题.<br>1.并且修改<code>_config.yml</code>配置文件,此配置文件是hexo的配置文件,注意和themes主题的配置文件区分.<br>2. 安装对应的依赖.<br><img alt data-src="/images/2019/11/3/2.png" class="lazyload"></p>
+<p>3.启动服务 <code>hexo s</code> 打开浏览器,输入  <code>localhost:4000</code> 即可看到效果.</p>
+<p>参考: <a href="https://roger0917.github.io/about/" target="_blank" rel="noopener">roger博客</a></p>
+<h2 id="自定义参数配置"><a href="#自定义参数配置" class="headerlink" title="自定义参数配置."></a>自定义参数配置.</h2><p>ButterFly 主题的文档有时候打不开,可以参考 <a href="https://molunerfinn.com/hexo-theme-melody-doc/theme-config.html#highlight-theme" target="_blank" rel="noopener">hexo-theme-melody</a>  ButterFly是基于此主题开发的.</p>
+<p>打开 ButterFly 主题的配置文件.针对自定义的参数进行配置.</p>
+<p>基本上看英文就知道是什么了,在此,重点关注几个地方:</p>
+<p>1.language: 配置语言.  此配置项应该是在hexo的配置文件中配置.<br><code>目前配置完成后,貌似偶尔不生效.</code><br>解决办法:将对应主题下的其他language文件全部删除,只留对应配置的语言文件即可解决此问题(不知道为啥).</p>
+<p>确保对应的主题中的themes/languages 文件夹下有对应的文件.<br><img alt data-src="/images/2019/11/3/3.png" class="lazyload"></p>
+<p>2.修改菜单为中文.<br><img alt data-src="/images/2019/11/3/4.png" class="lazyload"></p>
+<p>3.页面动态效果配置:</p>
+<p>需要的就将对应的置为: true即可.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">canvas_ribbon: 彩带</span><br><span class="line">canvas_ribbon_piao: 动态彩带</span><br><span class="line">canvas_nest: 页面类似线条网状蒲公英</span><br><span class="line">fireworks: 烟火特效,点击后烟花</span><br><span class="line">click_heart: 点击时,弹出爱心</span><br><span class="line">ClickShowText: 点击时,出现文字</span><br></pre></td></tr></table></figure>
+<p>简繁转化我关闭了.<br><img alt data-src="/images/2019/11/3/5.png" class="lazyload"></p>
+<p>其他的可以自行摸索.</p>
+<h2 id="搜索配置"><a href="#搜索配置" class="headerlink" title="搜索配置"></a>搜索配置</h2><p>我们可以看到,Butterfly给我们提供了2种搜索模式.</p>
+<p><img alt data-src="/images/2019/11/3/6.png" class="lazyload"></p>
+<p>由于第一种需要配置AppID等参数,我们暂时关闭掉.</p>
+<p>开启第二种搜索. [只有开启搜索后,页面上才会有搜索框]<br><img alt data-src="/images/2019/11/3/7.png" class="lazyload"></p>
+<p>点击搜索,报错.<br><img alt data-src="/images/2019/11/3/8.png" class="lazyload"></p>
+<p>解决: 找了各种参数,都没有找到怎么解决,百度一下. 发现local_search居然是hexo自带的功能…</p>
+<p>参考:<br><a href="https://www.jianshu.com/p/02afabcae502" target="_blank" rel="noopener">Hexo博客,搜索无效解决</a><br><a href="https://www.jianshu.com/p/519b45730824" target="_blank" rel="noopener">Hexo开启站内搜索</a><br>额… 是因为需要安装插件的原因</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p>安装完毕后,再刷新页面.<br><img alt data-src="/images/2019/11/3/9.png" class="lazyload"></p>
+<p>搜索可用!</p>
+<h2 id="开启评论功能"><a href="#开启评论功能" class="headerlink" title="开启评论功能"></a>开启评论功能</h2><p>ButterFly 主题,提供了2中评论功能的插件.<br>一种是 <a href="https://www.jianshu.com/p/656e6101bf0f" target="_blank" rel="noopener">gitalk</a><br>一种是 <a href>valine</a></p>
+<p>gitalk的使用:<br>参考:<br><a href="https://www.jianshu.com/p/656e6101bf0f" target="_blank" rel="noopener">在个人博客添加评论</a></p>
+<p>貌似我配置完之后,没有效果.(有效果的给我反馈一下,我好取消我的learnCloud账号.)<br><img alt data-src="/images/2019/11/3/10.png" class="lazyload"></p>
+<p>既然gitalk实现不了, 那就使用valine来实现吧.<br>配置 valine:<br><img alt data-src="/images/2019/11/3/11.png" class="lazyload"><br>效果:<br><img alt data-src="/images/2019/11/3/12.png" class="lazyload"><br>OK,实现了评论功能!</p>
+<p>使用valine注意事项:<br><code>需要申请learnCloud账号,要支付宝实名认证!要支付宝实名认证!要支付宝实名认证!</code></p>
+<p>注册过程我就不详述了,自己按照步骤来即可的.</p>
+<p>参考 : <a href="https://valine.js.org/quickstart.html" target="_blank" rel="noopener">learnCloud入口</a></p>
+<p>Hexo博客,从我突发神经想搞,到现在基本知道怎么整,前后差不多花了一周时间.</p>
+<p>一抬头,发现现在都凌晨 2点了,好困好饿…我先去吃碗泡面,休息了,休息了.</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">Cynen</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://cynen.github.io/2019/11/24/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%B8%89/">http://cynen.github.io/2019/11/24/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%B8%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://cynen.github.io">Cynen</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hexo/">hexo    </a></div><div class="post_share"><div class="social-share" data-image="/img/study.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button"><i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/donate.jpg"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/alipay.jpg"><div class="post-qr-code__desc">支付寶</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="next-post pull-full"><a href="/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/"><img class="next_cover lazyload" data-src="/img/study.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>hexo构建博客(二)</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2019/11/21/hexo构建博客-一/" title="hexo构建博客(一)"><img class="relatedPosts_cover lazyload"data-src="/img/study.jpg"><div class="relatedPosts_title">hexo构建博客(一)</div></a></div><div class="relatedPosts_item"><a href="/2019/11/21/hexo构建博客-二/" title="hexo构建博客(二)"><img class="relatedPosts_cover lazyload"data-src="/img/study.jpg"><div class="relatedPosts_title">hexo构建博客(二)</div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var notify = false == true ? true : false;
+var verify = false == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'W280wuDtBxXyibr9cVUXDES1-gzGzoHsz',
+  appKey:'b51VT3ryPOWVG0ch9ICSWh8I',
+  placeholder:'Please leave your footprints',
+  avatar:'wavatar',
+  guest_info:guest_info,
+  pageSize:'10',
+  lang:'zh-cn',
+  recordIP: true
+});</script></div></div></div><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 By Cynen</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="/js/search/local-search.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="/js/third-party/click_heart.js"></script><script src="/js/third-party/ClickShowText.js"></script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>local_search.powered_by</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
