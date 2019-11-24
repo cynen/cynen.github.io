@@ -6,6 +6,7 @@ tags:
 categories:
 - 兴趣爱好
 - 个人博客
+cover: /img/study.jpg
 ---
 
 # ButterFly 主题的应用.
@@ -60,6 +61,17 @@ ClickShowText: 点击时,出现文字
 
 其他的可以自行摸索.
 
+### 图片配置
+在md头中,可加入此参数,配置每个md文件的cover[封面]
+```
+cover: https://api.dujin.org/pic/ 
+// 以上是二次元的图源
+```
+此处建议尽量配置成单个图片的.
+以下是微软的bing搜索墙纸
+`https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture`
+如果不指定具体的图片,而是每次都重新读取,那么博客的图片也会每次都不一样.
+但是这个会导致归档的时候,无法展示图片. 
 
 ## 搜索配置
 

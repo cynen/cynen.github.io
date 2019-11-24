@@ -7,6 +7,7 @@ tags:
 categories:
 - docker
 - 应用部署
+cover: https://ws1.sinaimg.cn/large/466f79e8ly1fw5oh6wk50j21hc0u07cc.jpg 
 ---
 
 
