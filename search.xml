@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Docker搭建FastDFS</title>
+    <url>/2019/11/24/Docker%E6%90%AD%E5%BB%BAFastDFS/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>此篇是docker部署fastdfs教程,针对具有一定的docker容器基础的.</p>
+<h1 id="FastDFS架构"><a href="#FastDFS架构" class="headerlink" title="FastDFS架构:"></a>FastDFS架构:</h1><p><img alt data-src="/images/2019/11/4/1.jpeg" class="lazyload"><br>服务端两个角色：<br>Tracker：管理集群，tracker 也可以实现集群。每个 tracker 节点地位平等。收集 Storage 集群的状态。<br>Storage：实际保存文件   Storage 分为多个组，每个组之间保存的文件是不同的。每个组内部可以有多个成员，组成员内部保存的内容是一样的，组成员的地位是一致的，没有主从的概念。</p>
+<h1 id="文件上传及下载的流程"><a href="#文件上传及下载的流程" class="headerlink" title="文件上传及下载的流程"></a>文件上传及下载的流程</h1><h2 id="文件上传流程"><a href="#文件上传流程" class="headerlink" title="文件上传流程"></a>文件上传流程</h2><p><img alt data-src="/images/2019/11/4/2.jpeg" class="lazyload"><br>文件上传：<br>客户端链接到Server之后，可以从Server端获取到Storage的ip和port，然后将指定的文件通过storage的服务端口上传。 【此处使用的是配置文件中的 port=23000 还是http.server_port=8888】上传完成后,回传对应的文件的id.</p>
+<p>客户端上传文件后存储服务器将文件 ID 返回给客户端，此文件 ID 用于以后访问该文件的索引信息。文件索引信息包括：组名，虚拟磁盘路径，数据两级目录，文件名。<br><img alt data-src="/images/2019/11/4/4.jpeg" class="lazyload"></p>
+<ul>
+<li>组名：[group1/M00]文件上传后所在的 storage 组名称，在文件上传成功后有 storage 服务器返回，需要客户端自行保存。<br>虚拟磁盘路径：storage 配置的虚拟路径，与磁盘选项 store_path*对应。如果配置了<br>store_path0 则是 M00，如果配置了 store_path1 则是 M01，以此类推。</li>
+<li>[02/44/]数据两级目录：storage 服务器在每个虚拟磁盘路径下创建的两级目录，用于存储数据<br>文件。</li>
+<li>[一长串]文件名：与文件上传时不同。是由存储服务器根据特定信息生成，文件名包含：源存储<br>服务器 IP 地址、文件创建时间戳、文件大小、随机数和文件拓展名等信息。</li>
+</ul>
+<h2 id="文件下载流程"><a href="#文件下载流程" class="headerlink" title="文件下载流程"></a>文件下载流程</h2><p><img alt data-src="/images/2019/11/4/3.jpeg" class="lazyload"><br>文件上传完成后,进行文件下载的时候,指定的是file_id.<br>客户端链接到Server,获取到指定文件存储的文件信息,重定向请求到Storage服务器上,由于Storage服务器上无法提供文件服务,因此,此请求需要通过nginx做代理,将静态文件传递回给客户端.</p>
+<h1 id="Docker部署FastDFS"><a href="#Docker部署FastDFS" class="headerlink" title="Docker部署FastDFS"></a>Docker部署FastDFS</h1><p>OK,上面大致讲解了一下FastDFS的基础架构,现在准备来进行搭建吧.<br>由于直接在linux上进行搭建比较繁琐[具体搭建方法百度一下],因此,我这里采取我比较熟悉的Docker容器进行搭建.顺便记录一下搭建过程中遇到的一些问题和注意事项.</p>
+<p>搭建参考: <a href="https://www.cnblogs.com/yanwanglol/p/9860202.html" target="_blank" rel="noopener">docker搭建fastdfs</a></p>
+<h2 id="关键几步："><a href="#关键几步：" class="headerlink" title="关键几步："></a>关键几步：</h2><h3 id="1、使用docker镜像构建tracker"><a href="#1、使用docker镜像构建tracker" class="headerlink" title="1、使用docker镜像构建tracker"></a>1、使用docker镜像构建tracker</h3><p>（跟踪服务器，起到调度的作用）：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -d --network=host --name tracker -v /var/fdfs/tracker:/var/fdfs delron/fastdfs tracker</span><br></pre></td></tr></table></figure>
+<p>说明:<br><code>--network=host</code> 指定此容器运行使用的是host网络模式,也就是和宿主机共用物理网卡.占用的端口也就是物理机的端口.<code>非常重要!!</code><br><code>tracker</code> 最后一定要指定一下,启动的容器是 tracker还是storage.<br><code>-v</code> 目录映射,就是为了将容器内的目录,文件映射到宿主机上,方便修改.</p>
+<h3 id="2、使用docker镜像构建storage"><a href="#2、使用docker镜像构建storage" class="headerlink" title="2、使用docker镜像构建storage"></a>2、使用docker镜像构建storage</h3><p>实际的执行存储和读取文件的服务器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -d --network=host --name storage \</span><br><span class="line">-e TRACKER_SERVER=ip:22122 \</span><br><span class="line">-v /var/fdfs/storage:/var/fdfs \</span><br><span class="line">-e GROUP_NAME=group1 delron/fastdfs storage</span><br></pre></td></tr></table></figure>
+<p><code>storage</code> 最后面的一个storage一定要指定一下.<br><code>-e TRACKER_SERVER=ip:22122</code> 指定tracker服务器的地址和端口号. (所以,22122是可以换的)<br><code>-e GROUP_NAME=group1</code>指定当前的组名称</p>
+<h3 id="3、部署完成后，对服务器进行配置"><a href="#3、部署完成后，对服务器进行配置" class="headerlink" title="3、部署完成后，对服务器进行配置"></a>3、部署完成后，对服务器进行配置</h3><p>【都是在storage容器内部操作】<br> 1、进入storage容器，到storage的配置文件中配置http访问的端口，配置文件在/etc/fdfs目录下的storage.conf。</p>
+<p><code>vim /etc/fdfs/storage.conf</code><br>Storage 的服务端口：<br><img alt data-src="/images/2019/11/4/5.png" class="lazyload"></p>
+<p>2、配置nginx，在/usr/local/nginx/conf目录下，修改nginx.conf文件<br><code>cat /usr/local/nginx/conf/nginx.conf</code></p>
+<p>修改Nginx的配置： 【默认配置如下】</p>
+<p><img alt data-src="/images/2019/11/4/6.png" class="lazyload"></p>
+<p>可以这么修改： 【好像也可以不用配置。。。我使用的是默认配置.】</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">location /group1/M00 &#123;</span><br><span class="line">        alias  /var/fdfs;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后进行 测试：【storage容器内部操作】<br>由于已经将目录挂载到主机了。所以，我们直接给主机的挂载目录上传一张图片。 【这个。。。自己想办法吧,实在不行就 wget吧】<br><img alt data-src="/images/2019/11/4/7.png" class="lazyload"><br>这个是我传上去的一张照片，此时并没有被fastDFS管理！！！<br>上传指令：  【需要正确的1.jpg的路径。】<br>进入到/var/fdfs/目录下,查看是否存在图片文件.<br>在图片目录下执行一下命令:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf 1.jpg</span><br></pre></td></tr></table></figure>
+<p>上传成功后,会返回文件的id:<br><img alt data-src="/images/2019/11/4/8.png" class="lazyload"></p>
+<p>OK，在浏览器，直接访问：<br><code>http://{storage主机ip}:8888/group1/M00/00/00/rBAINlzw74qAWgPgAAS9dM2zyF4598.jpg</code><br>即可看到对应的图片.</p>
+<h3 id="Storage中的配置文件："><a href="#Storage中的配置文件：" class="headerlink" title="Storage中的配置文件："></a>Storage中的配置文件：</h3><p>我们来看一下一共使用了很多端口:<br><img alt data-src="/images/2019/11/4/9.png" class="lazyload"></p>
+<p>【Storage容器内操作】</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim storage.conf</span><br><span class="line"></span><br><span class="line">// 关注其中几个参数:   </span><br><span class="line">// 这个其实是我们运行此容器的时候,指定的参数.</span><br><span class="line">group_name=group1</span><br><span class="line">// 这个端口是Storage的端口,应该是storage和Tracker通信的端口.很重要.</span><br><span class="line">// 此端口可以修改,只要是唯一即可.修改成ECS在安全组里放行的端口.[必须是放行的端口.]</span><br><span class="line">port=23000</span><br><span class="line">// 指定基础路径,存放文件位置的.</span><br><span class="line">base_path=/var/fdfs</span><br><span class="line">// 扩容的路径</span><br><span class="line">store_path0=/var/fdfs</span><br><span class="line">//指定tracker服务器的地址,这个在容器运行时,做了指定,在这里也可以手工配置.</span><br><span class="line">tracker_server=47.107.177.108:22122</span><br><span class="line">// storage服务的端口,客户端从tracker获取到的storage的服务端口.[需要和客户端做通信的.非常关键.]</span><br><span class="line">http.server_port=8888</span><br><span class="line">// 此端口是storage和客户端进行通信的端口.修改了此端口,就需要修改 storage中的nginx监听端口.</span><br><span class="line">//</span><br></pre></td></tr></table></figure>
+
+<p>Nginx配置文件:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd /usr/local/nginx/conf/</span><br><span class="line">vim nginx.conf </span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        // 指定监听端口,和storage的http.server_port端口一致.</span><br><span class="line">        listen       8888; </span><br><span class="line">        server_name  localhost;</span><br><span class="line">        // 指定地址.</span><br><span class="line">        location ~/group[0-9]/ &#123;</span><br><span class="line">            ngx_fastdfs_module;</span><br><span class="line">        &#125;</span><br><span class="line">        error_page   500 502 503 504  /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">            root html;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">// =================== 如果不好使的话,这么替换: ==============</span><br><span class="line">// 目前阿里云上,我没有配置,也可以直接访问了.</span><br><span class="line">       // 指定地址.</span><br><span class="line">       // 配置这个的目的,是为了浏览器能够直接访问到文件.</span><br><span class="line">        location /group1/M00 &#123;</span><br><span class="line">            alias /var/fdfs; // storage指定的存储文件的位置.</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结:"></a>个人总结:</h2><ul>
+<li>上传时候,使用的应该是链接 tracker的22122端口, 从tracker获取storage的8888端口. <code>此8888端口是我们自己配置的</code></li>
+<li>客户端通过tracker实际是获取到对应storage服务的8888端口.</li>
+<li>客户端既要和tracker通信<code>类似Zookeeper</code> 又要和storage通信.</li>
+<li>对比Dubbo的架构设计,Zookeeper作为调度中心,客户端优先通过2181访问Zookeeper服务器,然后获得对应接口的远程服务器的ip:port然后调用远程服务器的服务. <code>很像吧...</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>docker</category>
+        <category>应用部署</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>fastdfs</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo构建博客(三)</title>
     <url>/2019/11/24/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%B8%89/</url>
     <content><![CDATA[<h1 id="ButterFly-主题的应用"><a href="#ButterFly-主题的应用" class="headerlink" title="ButterFly 主题的应用."></a>ButterFly 主题的应用.</h1><h2 id="Butterfly主题下载"><a href="#Butterfly主题下载" class="headerlink" title="Butterfly主题下载."></a>Butterfly主题下载.</h2><p>下载参照上一步的变更主题的链接: <a href="https://cynen.github.io/2019/11/21/hexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/">hexo构建博客(二)</a>,直接搜索 Butterfly</p>
