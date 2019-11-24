@@ -2,10 +2,10 @@
 title: hexo构建博客(二)
 date: 2019-11-21 23:31:47
 categories:
-  - 兴趣爱好
-  - 个人博客
+- 兴趣爱好
+- 博客搭建
 tags:
-  - hexo
+- hexo
 ---
 
 本节主要是介绍hexo更换主题

@@ -3,7 +3,7 @@ title: hexo构建博客(一)
 date: 2019-11-21 21:32:37
 categories:
   - 兴趣爱好
-  - 个人博客
+  - 博客搭建
 tags:
   - hexo
 ---

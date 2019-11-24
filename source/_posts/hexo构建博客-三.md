@@ -5,7 +5,7 @@ tags:
 - hexo
 categories:
 - 兴趣爱好
-- 个人博客
+- 博客搭建
 cover: /img/study.jpg
 ---
 
