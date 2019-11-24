@@ -98,7 +98,7 @@ ButterFly 主题,提供了2中评论功能的插件.
 一种是 [gitalk](https://www.jianshu.com/p/656e6101bf0f)
 一种是 [valine]()
 
-gitalk的使用:
+### gitalk的使用:
 参考: 
 [在个人博客添加评论](https://www.jianshu.com/p/656e6101bf0f)
 
@@ -106,7 +106,8 @@ gitalk的使用:
 ![](/images/2019/11/3/10.png)
 
 既然gitalk实现不了, 那就使用valine来实现吧.
-配置 valine: 
+
+### 配置 valine: 
 ![](/images/2019/11/3/11.png)
 效果:
 ![](/images/2019/11/3/12.png)

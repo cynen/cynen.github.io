@@ -112,5 +112,26 @@ hexo deploy 或者 hexo d
 ```
 会自动将我们的代码部署到github.io网站上.
 
+# npm install 安装慢解决方法
+npm 默认是要去国外拉取资源的,由于国内特殊的原因,很可能npm install 会很慢,甚至压根没有反应.
+
+解决办法: 替换npm的安装源.
+使用get 命令,查看当前npm的源地址:
+
+```
+npm config get registry
+```
+
+不出所料,会返回: `http://registry.npmjs.org`
+这个是国外的网站,你们懂的.
+
+替换成国内的.这里可以根据自己需要,百度一下不同的源.
+我这里替换成阿里的.
+```
+npm config set registry http://registry.npm.taobao.org
+```
+
+
+
 
 至此,我们的博客基本已经搭建完成,下一节,讲解自定义主题.

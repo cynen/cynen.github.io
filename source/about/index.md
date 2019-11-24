@@ -1,10 +1,21 @@
 ---
-title: 关于
+title: About
 layout: about
 type: about
 ---
 
 
-# 一个人
+# 关于我
 
-在这里描述....
+
+# 联系我
+Github: [cynen](https://github.com/cynen)
+Email: cynen@foxmail.com
+微信:
+<img src="/images/basic/wechat.jpg" style="zoom:50%">
+
+
+# 友情链接
+
+[百度一下](http://www.baidu.com)&nbsp;|&nbsp;[QQ](http://qq.com)
+
