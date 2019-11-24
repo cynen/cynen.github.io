@@ -31,9 +31,10 @@
 <p>安装完毕后,再刷新页面.<br><img alt data-src="/images/2019/11/3/9.png" class="lazyload"></p>
 <p>搜索可用!</p>
 <h2 id="开启评论功能"><a href="#开启评论功能" class="headerlink" title="开启评论功能"></a>开启评论功能</h2><p>ButterFly 主题,提供了2中评论功能的插件.<br>一种是 <a href="https://www.jianshu.com/p/656e6101bf0f" target="_blank" rel="noopener">gitalk</a><br>一种是 <a href>valine</a></p>
-<p>gitalk的使用:<br>参考:<br><a href="https://www.jianshu.com/p/656e6101bf0f" target="_blank" rel="noopener">在个人博客添加评论</a></p>
+<h3 id="gitalk的使用"><a href="#gitalk的使用" class="headerlink" title="gitalk的使用:"></a>gitalk的使用:</h3><p>参考:<br><a href="https://www.jianshu.com/p/656e6101bf0f" target="_blank" rel="noopener">在个人博客添加评论</a></p>
 <p>貌似我配置完之后,没有效果.(有效果的给我反馈一下,我好取消我的learnCloud账号.)<br><img alt data-src="/images/2019/11/3/10.png" class="lazyload"></p>
-<p>既然gitalk实现不了, 那就使用valine来实现吧.<br>配置 valine:<br><img alt data-src="/images/2019/11/3/11.png" class="lazyload"><br>效果:<br><img alt data-src="/images/2019/11/3/12.png" class="lazyload"><br>OK,实现了评论功能!</p>
+<p>既然gitalk实现不了, 那就使用valine来实现吧.</p>
+<h3 id="配置-valine"><a href="#配置-valine" class="headerlink" title="配置 valine:"></a>配置 valine:</h3><p><img alt data-src="/images/2019/11/3/11.png" class="lazyload"><br>效果:<br><img alt data-src="/images/2019/11/3/12.png" class="lazyload"><br>OK,实现了评论功能!</p>
 <p>使用valine注意事项:<br><code>需要申请learnCloud账号,要支付宝实名认证!要支付宝实名认证!要支付宝实名认证!</code></p>
 <p>注册过程我就不详述了,自己按照步骤来即可的.</p>
 <p>参考 : <a href="https://valine.js.org/quickstart.html" target="_blank" rel="noopener">learnCloud入口</a></p>
