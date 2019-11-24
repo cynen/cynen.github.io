@@ -70,6 +70,9 @@ cover: https://api.dujin.org/pic/
 此处建议尽量配置成单个图片的.
 以下是微软的bing搜索墙纸
 `https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture`
+这里有一些资料:
+[随机图片API](https://blog.csdn.net/qq_41463655/article/details/94176425)
+
 如果不指定具体的图片,而是每次都重新读取,那么博客的图片也会每次都不一样.
 但是这个会导致归档的时候,无法展示图片. 
 
